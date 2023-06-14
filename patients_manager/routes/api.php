@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 
 //appointment
 Route::get('/appointment/all',[AppointmentController::class,'getAppointmentsAPI']);
+Route::get('/appointment/doctor/{name}',[AppointmentController::class,'findAppointmentOfPatientAPI']);//createAppointmentOfPatientAPI
+Route::post('/appointment',[AppointmentController::class,'createAppointmentOfPatientAPI']);
 
 //doctor
 Route::get('/doctor/all',[DoctorController::class,'getDoctorsAPI']);
