@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 
 //appointment
 Route::get('/appointment/all',[AppointmentController::class,'getAppointmentsAPI']);
+Route::get('/appointment/doctor/{name}',[AppointmentController::class,'findAppointmentOfPatientAPI']);//createAppointmentOfPatientAPI
+Route::post('/appointment',[AppointmentController::class,'createAppointmentOfPatientAPI']);
 
 //doctor
 Route::get('/doctor/all',[DoctorController::class,'getDoctorsAPI']);
@@ -22,13 +24,9 @@ Route::get('/insurance/all',[InsuranceController::class,'getInsurancesAPI']);
 
 //medicalrecord
 Route::get('/medicalrecord/all',[MedicalrecordController::class,'getMedicalrecordsAPI']);
-Route::get('/medicalrecord/find/{id}',[MedicalrecordController::class,'findMedicalrecordsAPI']);
-Route::get('/medicalrecord/get/{id}',[MedicalrecordController::class,'getMedicalrecordAPI']);
-// Route::delete('/medicalrecord/{id}',[MedicalrecordController::class,'deleteMedicalrecordAPI']);
-Route::post('/medicalrecord',[MedicalrecordController::class,'createMedicalrecord']);
-Route::post('/medicalrecord/update',[MedicalrecordController::class,'updateMedicalrecordAPI']);
-Route::get('/medicalrecord/name/{name}',[MedicalrecordController::class,'findPatientInMedicalrecordsAPI']);
-//patient
+
+
+//medicalrecord
 Route::get('/patient/all',[PatientController::class,'getPatientsAPI']);
 Route::get('/patient/{name}',[PatientController::class,'findPatientsAPI']);
 Route::get('/patient/{id}',[PatientController::class,'getPatientAPI']);
