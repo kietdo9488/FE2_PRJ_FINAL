@@ -69,9 +69,9 @@ class PatientController extends Controller
         $name = $request->name;
         $value = Patient::where('full_name','like','%'.$name.'%')->get();
         if($value != null){
-            return response() -> json(['message'=>'Tìm thấy bệnh nhân thành công','patient'=>$value],200);
+            return response() -> json(['massage'=>'Tìm thấy bệnh nhân thành công','patient'=>$value],200);
         }else{
-            return response() -> json(['message'=>'Không tìm bệnh nhân sỹ'],404);
+            return response() -> json(['masage'=>'Không tìm bệnh nhân sỹ'],404);
         }
         Return $request; 
     }
