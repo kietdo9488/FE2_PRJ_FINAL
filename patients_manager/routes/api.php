@@ -30,6 +30,12 @@ Route::post('/insurance/update',[InsuranceController::class,'updateInsurancesAPI
 
 //medicalrecord
 Route::get('/medicalrecord/all',[MedicalrecordController::class,'getMedicalrecordsAPI']);
+Route::get('/medicalrecord/find/{id}',[MedicalrecordController::class,'findMedicalrecordsAPI']);
+Route::get('/medicalrecord/get/{id}',[MedicalrecordController::class,'getMedicalrecordAPI']);
+// Route::delete('/medicalrecord/{id}',[MedicalrecordController::class,'deleteMedicalrecordAPI']);
+Route::post('/medicalrecord',[MedicalrecordController::class,'createMedicalrecord']);
+Route::post('/medicalrecord/update',[MedicalrecordController::class,'updateMedicalrecordAPI']);
+Route::get('/medicalrecord/name/{name}',[MedicalrecordController::class,'findPatientInMedicalrecordsAPI']);
 
 
 //medicalrecord
